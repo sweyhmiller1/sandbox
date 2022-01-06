@@ -97,8 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
           home: HomePageWidget(),
           routes: {
 
-            '/text':(ctx)=>ListofoptionWidget(),
-            '/activities':(ctx)=> ListofoptWidget(),
+            '/text':(ctx)=>MyCustomForm(),
+            //'/activities':(ctx)=> ListofoptWidget(),
             '/home':(ctx)=> HomePageWidget(),
           },
         ));

@@ -1,8 +1,10 @@
 // Define a custom Form widget.
+import 'package:flutter/material.dart';
 
+import 'forms.dart';
 
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({Key key}) : super(key: key);
 
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
@@ -13,6 +15,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Create a text controller and use it to retrieve the current value
   // of the TextField.
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   final myController = TextEditingController();
 
   @override
@@ -25,33 +28,36 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     // Fill this out in the next step.
+    return Scaffold(
+      body:SafeArea(
+        child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          TextField(
+            controller: myController,
+          ),
+          FloatingActionButton(
+            // When the user presses the button, show an alert dialog containing
+            // the text that the user has entered into the text field.
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    // Retrieve the text that the user has entered by using the
+                    // TextEditingController.
+                    content: Text(myController.text),
+                  );
+                },
+              );
+              inputsArray.add(myController.text);
+            },
+          tooltip: 'Show me the value!',
+          child: const Icon(Icons.text_fields),
+          ),
+        ],
+        ),
+      ),
+    );
   }
-}
-
-return TextField(
-controller: myController,
-);
-
-
-FloatingActionButton(
-// When the user presses the button, show an alert dialog containing
-// the text that the user has entered into the text field.
-onPressed: () {
-showDialog(
-context: context,
-builder: (context) {
-return AlertDialog(
-// Retrieve the text that the user has entered by using the
-// TextEditingController.
-content: Text(myController.text),
-);
-},
-);
-},
-tooltip: 'Show me the value!',
-child: const Icon(Icons.text_fields),
-),
-
-void main() {
-  inputsArray.add(myController.text);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 final inputsArray = new List<String>();
 
@@ -33,6 +34,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               children: [],
             ),
             SizedBox(
+              height: 20,
+            ),
+            SizedBox(
               width: 130,
               height: 40,
               child: TextButton(
@@ -41,24 +45,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   },
                   style:
                   TextButton.styleFrom(
-                    primary: Colors.blueGrey,
+                    backgroundColor: Colors.blueGrey,
                   ),
                   child: Text("Button 1", style: TextStyle(color: Colors.white)),
             ),
             ),
             SizedBox(
-              width: 130,
-              height: 40,
-              child: TextButton(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                style:
-                TextButton.styleFrom(
-                  primary: Colors.blueGrey,
-                ),
-                child: Text("Button 2", style: TextStyle(color: Colors.white)),
-              ),
+              height: 20,
             ),
             SizedBox(
               width: 130,
@@ -69,10 +62,31 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 },
                 style:
                 TextButton.styleFrom(
-                  primary: Colors.blueGrey,
+                  backgroundColor: Colors.blueGrey,
+                ),
+                child: Text("Button 2", style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: 130,
+              height: 40,
+              child: TextButton(
+                onPressed: () {
+                  print('Button pressed ...');
+                },
+                style:
+                TextButton.styleFrom(
+                  //primary: Colors.blueGrey,
+                  backgroundColor: Colors.blueGrey,
                 ),
                 child: Text("Button 3", style: TextStyle(color: Colors.white)),
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             GestureDetector(
               onTap: () => {
@@ -89,7 +103,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           .join('_'),
                       dateonly);*/
                 }),
-                Navigator.of(context).pushNamed('/home_screen'),
+                Navigator.of(context).pushNamed('/text'),
               },
               child: Container(
                 height: 38.00,
