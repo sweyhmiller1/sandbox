@@ -1,55 +1,31 @@
 import 'package:flutter/material.dart';
-void main() => runApp(MyApp());
-class MyApp extends StatelessWidget {
+
+
+class grid extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('GridView'),
-        ),
-        body: Center(
-          child: Container(
-            // height: 200,
-            child: GridView.count(
-              scrollDirection: Axis.vertical,
-              crossAxisCount: 2,
-              children: [
-                Card(
-                  color: Colors.teal,
-                ),
-                Card(
-                  color: Colors.cyan,
-                ),
-                Card(
-                  color: Colors.yellowAccent,
-                ),
-                Card(
-                  color: Colors.deepOrange,
-                ),
-                Card(
-                  color: Colors.red,
-                ),
-                Card(
-                  color: Colors.yellow,
-                ),
-                Card(
-                  color: Colors.purpleAccent,
-                ),
-                Card(
-                  color: Colors.indigo,
-                ),
-                Card(
-                  color: Colors.black,
-                ),
-                Card(
-                  color: Colors.pinkAccent,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+  appBar: AppBar(
+  title: Text(
+  'Planner',
+  style: TextStyle(fontSize: 24),
+  ),
+  actions: [Icon(Icons.search), SizedBox(width: 12)],
+  ),
+  body: Center(
+  child: isLoading
+  ? CircularProgressIndicator()
+      : notes.isEmpty
+  ? Text(
+  'Here is where you can plan a workout, and set a schedule, try it out!',
+  style: TextStyle(color: Colors.white, fontSize: 24),
+  )
+      : buildNotes(),
+  ),
+  floatingActionButton: FloatingActionButton(
+  backgroundColor: Colors.black,
+  child: Icon(Icons.add),
+  onPressed: () async {
+  await Navigator.of(context).push(
+  MaterialPageRoute(builder: (context) => AddEditNotePage()),
+  );
 }
