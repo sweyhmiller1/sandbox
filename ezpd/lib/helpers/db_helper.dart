@@ -1,6 +1,6 @@
 
 
-import 'package:moodairy/models/moodcard.dart';
+import 'package:ezpd/models/moodcard.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqlite_api.dart';
@@ -10,8 +10,10 @@ class DBHelper {
     final dbPath = await sql.getDatabasesPath();
     return sql.openDatabase(path.join(dbPath, 'moods.db'),
         onCreate: (db, version) {
+          //return db.execute(
+              //'CREATE TABLE user_moods(datetime TEXT PRIMARY KEY, mood TEXT, image TEXT,actimage TEXT,actname TEXT,date TEXT)');
           return db.execute(
-              'CREATE TABLE user_moods(datetime TEXT PRIMARY KEY, mood TEXT, image TEXT,actimage TEXT,actname TEXT,date TEXT)');
+              'CREATE TABLE user_moods(datetime TEXT PRIMARY KEY, inputs TEXT, image TEXT,actimage TEXT,actname TEXT,date TEXT, notes TEXT)');
         }, version: 1);
   }
 
