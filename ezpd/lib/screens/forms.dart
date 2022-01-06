@@ -1,8 +1,6 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+final inputsArray = new List<String>();
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key key}) : super(key: key);
@@ -19,7 +17,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.primaryColor,
+        backgroundColor: Colors.blueGrey,
         automaticallyImplyLeading: true,
         actions: [],
         centerTitle: true,
@@ -34,86 +32,87 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [],
             ),
-            FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
-              },
-              text: 'Button 1',
-              options: FFButtonOptions(
-                width: 130,
-                height: 40,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: 12,
-              ),
+            SizedBox(
+              width: 130,
+              height: 40,
+              child: TextButton(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  style:
+                  TextButton.styleFrom(
+                    primary: Colors.blueGrey,
+                  ),
+                  child: Text("Button 1", style: TextStyle(color: Colors.white)),
             ),
-            FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
-              },
-              text: 'Button2',
-              options: FFButtonOptions(
-                width: 130,
-                height: 40,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: 12,
-              ),
             ),
-            FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
-              },
-              text: 'Button3',
-              options: FFButtonOptions(
-                width: 130,
-                height: 40,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Poppins',
-                  color: Colors.white,
-                ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: 12,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 400, 0, 0),
-              child: FFButtonWidget(
+            SizedBox(
+              width: 130,
+              height: 40,
+              child: TextButton(
                 onPressed: () {
                   print('Button pressed ...');
                 },
-                text: 'Next Page',
-                options: FFButtonOptions(
-                  width: 130,
-                  height: 40,
-                  color: FlutterFlowTheme.primaryColor,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                  ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 12,
+                style:
+                TextButton.styleFrom(
+                  primary: Colors.blueGrey,
+                ),
+                child: Text("Button 2", style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            SizedBox(
+              width: 130,
+              height: 40,
+              child: TextButton(
+                onPressed: () {
+                  print('Button pressed ...');
+                },
+                style:
+                TextButton.styleFrom(
+                  primary: Colors.blueGrey,
+                ),
+                child: Text("Button 3", style: TextStyle(color: Colors.white)),
+              ),
+            ),
+            GestureDetector(
+              onTap: () => {
+                setState(() {
+                  /*Provider.of<MoodCard>(context, listen: false).addPlace(
+                      datetime,
+                      mood,
+                      image,
+                      Provider.of<MoodCard>(context, listen: false)
+                          .activityimage
+                          .join('_'),
+                      Provider.of<MoodCard>(context, listen: false)
+                          .activityname
+                          .join('_'),
+                      dateonly);*/
+                }),
+                Navigator.of(context).pushNamed('/home_screen'),
+              },
+              child: Container(
+                height: 38.00,
+                width: 117.00,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Save',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                        fontSize: 21.5,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(width: 5,),
+                    Icon(Icons.save_alt , size: 20 , color: Colors.white)
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  border: Border.all(width: 1.00, color: Colors.grey,), borderRadius: BorderRadius.circular(19.00),
                 ),
               ),
             ),
