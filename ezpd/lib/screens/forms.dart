@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-final inputsArray = new List<String>();
+List<String> inputsArray = [];
+String note;
+String input;
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key key}) : super(key: key);
@@ -42,6 +44,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               child: TextButton(
                   onPressed: () {
                     print('Button pressed ...');
+                    input='1';
                   },
                   style:
                   TextButton.styleFrom(
@@ -59,6 +62,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               child: TextButton(
                 onPressed: () {
                   print('Button pressed ...');
+                  input='2';
                 },
                 style:
                 TextButton.styleFrom(
@@ -76,6 +80,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               child: TextButton(
                 onPressed: () {
                   print('Button pressed ...');
+                  input='3';
                 },
                 style:
                 TextButton.styleFrom(

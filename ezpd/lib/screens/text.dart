@@ -50,8 +50,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   );
                 },
               );
-              inputsArray.add(myController.text);
-              print(inputsArray);
+              note = myController.text;
+              //inputsArray.add(myController.text);
+              print(note);
               Navigator.of(context).pushNamed('/grid');
             },
           tooltip: 'Show me the value!',
