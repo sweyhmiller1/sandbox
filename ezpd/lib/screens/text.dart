@@ -1,6 +1,5 @@
 // Define a custom Form widget.
 
-final inputsArray = new List<String>();
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
