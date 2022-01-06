@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
           routes: {
 
             '/text':(ctx)=>MyCustomForm(),
-            //'/activities':(ctx)=> ListofoptWidget(),
+            '/grid':(ctx)=> Grid(),
             '/home':(ctx)=> HomePageWidget(),
           },
         ));

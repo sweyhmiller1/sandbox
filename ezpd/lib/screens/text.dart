@@ -51,6 +51,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 },
               );
               inputsArray.add(myController.text);
+              print(inputsArray);
+              Navigator.of(context).pushNamed('/grid');
             },
           tooltip: 'Show me the value!',
           child: const Icon(Icons.text_fields),
